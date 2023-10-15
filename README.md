@@ -1,5 +1,4 @@
-                        Online Learning and Convex Optimization Course                        ┃
-┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+                        Online Learning and Convex Optimization Course                        
 
 Welcome to the Online Learning and Convex Optimization course repository! In this repository,
 you will find a collection of algorithms and practical implementations for online learning
