@@ -21,17 +21,17 @@ ftl_loss_data = np.array([])
 best_case_cum_loss = np.array([])
 
 for step in range(ITERATIONS):
-    # user_value = enemy_decisions.mean()
-    # if not user_decisions.size:
-    #     user_value = BEST_CHOICE   
-    # enemy_value = np.random.uniform()
+    user_value = enemy_decisions.mean()
+    if not user_decisions.size:
+        user_value = BEST_CHOICE   
+    enemy_value = np.random.uniform()
     
-    # enemy_decisions = np.hstack([enemy_decisions, enemy_value])
-    # user_decisions = np.hstack([user_decisions, user_value])
+    enemy_decisions = np.hstack([enemy_decisions, enemy_value])
+    user_decisions = np.hstack([user_decisions, user_value])
     
-    # stored_regret = np.hstack([stored_regret, calculate_regret(user_decisions, enemy_decisions)])
-    # ftl_loss_data = np.hstack([ftl_loss_data, total_loss(user_decisions, enemy_decisions)])
-    # best_case_cum_loss = np.hstack([best_case_cum_loss, total_loss(np.full_like(enemy_decisions, BEST_CHOICE), enemy_decisions)])
+    stored_regret = np.hstack([stored_regret, calculate_regret(user_decisions, enemy_decisions)])
+    ftl_loss_data = np.hstack([ftl_loss_data, total_loss(user_decisions, enemy_decisions)])
+    best_case_cum_loss = np.hstack([best_case_cum_loss, total_loss(np.full_like(enemy_decisions, BEST_CHOICE), enemy_decisions)])
 
 
 # Plotting the stored regret over time
