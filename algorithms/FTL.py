@@ -20,6 +20,7 @@ stored_regret = np.array([])
 our_cum_loss = np.array([])
 best_case_cum_loss = np.array([])
 
+#Run FTL and track Cumulative Loss of our choices, Cumulative loss of best Comparitor (E(yi)), and Regret 
 for step in range(ITERATIONS):
     user_value = enemy_decisions.mean()
     if not user_decisions.size:
@@ -27,7 +28,9 @@ for step in range(ITERATIONS):
     # Maximize FTL over [0,1], try with uniform and see that the regret is less. 
     # This is showing that we can have a tigher lower bound on the regret.  sigma^2 Ω (log T) < Regret < O(logT)
     # So as yourself, what distribution on [0,1] at each sample, will have biggest variance with mean 1/2? Bernouli(1/2)
+    
     enemy_value = np.random.binomial(1, 1/2) 
+    # enemy_value = np.random.uniform()
     
     enemy_decisions = np.hstack([enemy_decisions, enemy_value])
     user_decisions = np.hstack([user_decisions, user_value])
